@@ -71,11 +71,11 @@ $ git submodule update
 
 * Download any manifest you need
 
-```
+ ```
 $ cd ..
 $ cd puppet/modules
 $ git clone  https://< what ever you need >.git
-```
+ ```
 
 ## Using it:
 
@@ -89,9 +89,9 @@ $ vagrant up
 
 * Connecting to service box
 
-```
+ ```
 $ vagrant ssh
-```
+ ```
 
 ##Authors:
 
