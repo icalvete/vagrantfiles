@@ -27,6 +27,8 @@ Vagrant files to build some service boxes
 
 [Common]
 
+**[Boxes uptated at 01/2014 with latest puppet can be found here](https://drive.google.com/folderview?id=0B7WTTQeWTJErRGFUUlUzaW9OSW8&usp=sharing)**
+
 * Download http://files.vagrantup.com/precise64.box
 * Download https://dl.dropboxusercontent.com/u/547671/thinkstack-raring64.box
 * Add boxes:
