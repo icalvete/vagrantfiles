@@ -3,4 +3,10 @@ stage{'post':}
 
 Stage[pre] -> Stage[main] -> Stage[post]
 
-import 'nodes/*.pp'
+node default {
+
+  class {'kyototycoon':
+    memcached => true
+  }
+}
+
