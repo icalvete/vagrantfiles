@@ -2,7 +2,7 @@
 
 Vagrant files to build some service boxes
 
-**Todos los archivos Vagrant están configurados para utilizar saucy64 como cuadro. Siéntase libre de personalizar archivos.**
+**All Vagrant Files are configured to use saucy64 as box. Feel free to customize files**
 
 ## Requires:
 
