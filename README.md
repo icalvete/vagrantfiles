@@ -2,6 +2,8 @@
 
 Vagrant files to build some service boxes
 
+**Todos los archivos Vagrant están configurados para utilizar saucy64 como cuadro. Siéntase libre de personalizar archivos.**
+
 ## Requires:
 
 * [hiera](http://docs.puppetlabs.com/hiera/1/index.html)
@@ -27,10 +29,15 @@ Vagrant files to build some service boxes
 
 [Common]
 
+* Download boxes (precise64.box, raring64.box,  saucy64.box)
+
 **[Boxes uptated at 01/2014 with latest puppet can be found here](https://drive.google.com/folderview?id=0B7WTTQeWTJErRGFUUlUzaW9OSW8&usp=sharing)**
+
+Other end points:
 
 * Download http://files.vagrantup.com/precise64.box
 * Download https://dl.dropboxusercontent.com/u/547671/thinkstack-raring64.box
+
 * Add boxes:
 
 [\*NIX]
