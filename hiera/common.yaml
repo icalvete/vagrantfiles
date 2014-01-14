@@ -1,0 +1,17 @@
+---
+backup_dir: '/srv/backup'
+
+org: 'sp'
+org_domain: 'smartpurposes.net'
+
+sp_repo_scheme: 'https'
+sp_repo_domain: 'repo.smartpurposes.net'
+sp_repo_port: ''
+sp_repo_user: ''
+sp_repo_pass: ''
+sp_repo_path: ''
+
+elasticsearch_package: 'elasticsearch-0.90.5.deb'
+
+mysql_root_user: 'root'
+mysql_root_pass: 'mysql'
