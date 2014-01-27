@@ -103,6 +103,12 @@ $ vagrant up
 $ vagrant ssh
  ```
 
+## Extend this service boxes
+
+* Create _< where ever >vagrantfiles/puppet/modules_ and put your own puppet manifests here.
+* Change any _<where ever>/vagrantfiles/<service box>/puppet/manifests/site.pp_ to extend it.
+
+
 ## Hiera
 
 **Some service box (mysql, rabbitmq...) are using manifest who needs hiera.**
@@ -112,6 +118,6 @@ Put your hiera file in _< where ever >/vagrantfiles/puppet/hiera/common.yaml_
 [hiera example](https://github.com/icalvete/vagrantfiles/blob/master/hiera/common.yaml)
 
 
-##Authors:
+## Authors:
 
 Israel Calvete Talavera <icalvete@gmail.com>
