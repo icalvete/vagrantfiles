@@ -107,7 +107,7 @@ $ vagrant ssh
 
 **Some service box (mysql, rabbitmq...) are using manifest who needs hiera.**
 
-Put your hiera file in _< where ever >/vagrantfiles/puppet/modules/hiera/common.yaml_
+Put your hiera file in _< where ever >/vagrantfiles/puppet/hiera/common.yaml_
 
 [hiera example](https://github.com/icalvete/vagrantfiles/blob/master/hiera/common.yaml)
 

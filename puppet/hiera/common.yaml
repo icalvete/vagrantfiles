@@ -12,6 +12,7 @@ sp_repo_pass: ''
 sp_repo_path: ''
 
 elasticsearch_package: 'elasticsearch-0.90.5.deb'
+rabbitmq_package: 'rabbitmq-server_3.1.5-1_all.deb'
 
 mysql_root_user: 'root'
 mysql_root_pass: 'mysql'

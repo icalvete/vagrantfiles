@@ -6,4 +6,4 @@
  - global
  - common
 :yaml:
- :datadir: /tmp/vagrant-puppet-1/modules-0/hiera/
+ :datadir: /tmp/vagrant-puppet-1/modules-0/
