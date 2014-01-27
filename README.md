@@ -106,7 +106,7 @@ $ vagrant ssh
 ## Extend this service boxes
 
 * Create _< where ever >vagrantfiles/puppet/modules_ and put your own puppet manifests here.
-* Change any _<where ever>/vagrantfiles/<service box>/puppet/manifests/site.pp_ to extend it.
+* Change any _< where ever >/vagrantfiles/< service box >/puppet/manifests/site.pp_ to extend it.
 
 
 ## Hiera
