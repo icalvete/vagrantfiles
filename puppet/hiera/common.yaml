@@ -1,4 +1,6 @@
 ---
+environment: 'DES'
+
 backup_dir: '/srv/backup'
 
 org: 'sp'
