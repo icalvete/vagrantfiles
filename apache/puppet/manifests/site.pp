@@ -5,6 +5,8 @@ Stage[pre] -> Stage[main] -> Stage[post]
 
 node default {
 
-  include roles::apache2_server
+  class {'roles::apache2_server':
+    phalcon => true
+  }
 }
 
