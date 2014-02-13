@@ -5,7 +5,7 @@ Stage[pre] -> Stage[main] -> Stage[post]
 
 node default {
 
-  class {'kyototycoon':
+  class {'roles::kyototycoon_server':
     memcached => true
   }
 }
