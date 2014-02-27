@@ -75,6 +75,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # #               Managed by Puppet.\n"
   # # }
   #
+  config.vm.provision :shell do |shell|
+    shell.inline = "/usr/bin/apt-get update"
+  end
   config.vm.provision :puppet do |puppet|
     puppet.manifests_path = "puppet/manifests"
     puppet.manifest_file  = "site.pp"
