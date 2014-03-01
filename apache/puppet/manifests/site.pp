@@ -15,5 +15,15 @@ node default {
   class {'roles::apache2_server':
     phalcon => true
   }
+
+  apache2::site{'core.vhost.conf':
+    source  => 'axn-server-finder/core.vhost.conf.erb',
+    require => Class['roles::apache2_server']
+  }
+
+  apache2::site{'api.vhost.conf':
+    source  => 'axn-server/api.vhost.conf.erb',
+    require => Class['roles::apache2_server']
+  }
 }
 
