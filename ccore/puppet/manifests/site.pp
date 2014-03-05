@@ -13,17 +13,5 @@ node default {
   }
 
   include ccore
-
-  class {'roles::apache2_server':
-    phalcon => true
-  }
-
-  if $php5::params::environment == 'DES' {
-
-    $package = ['php5-dev', 'swig']
-    package {$package:
-      ensure  => present
-    }
-  }
 }
 
