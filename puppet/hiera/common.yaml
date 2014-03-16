@@ -1,5 +1,5 @@
 ---
-environment: 'DES'
+environment: 'DEV'
 
 backup_dir: '/srv/backup'
 

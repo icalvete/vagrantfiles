@@ -18,7 +18,7 @@ node default {
     phalcon => true
   }
 
-  if $php5::params::environment == 'DES' {
+  if $php5::params::environment == 'DEV' {
 
     $package = ['php5-dev', 'swig']
     package {$package:
