@@ -4,6 +4,9 @@ stage{'post':}
 Stage[pre] -> Stage[main] -> Stage[post]
 
 node default {
-  include memcached
+
+  class {'roles::memcached_server':
+    max_object_size => '3m'
+  }
 }
 
