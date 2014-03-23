@@ -25,5 +25,9 @@ node default {
       ensure  => present
     }
   }
+
+  class{'roles::syslog_sender_server':
+    syslog_remote_server => '192.168.33.5'
+  }
 }
 
