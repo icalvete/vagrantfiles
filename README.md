@@ -35,8 +35,8 @@ Vagrant files to build some service boxes
 
 Other end points:
 
-*Download http://files.vagrantup.com/precise64.box
-*Download https://dl.dropboxusercontent.com/u/547671/thinkstack-raring64.box
+* Download http://files.vagrantup.com/precise64.box
+* Download https://dl.dropboxusercontent.com/u/547671/thinkstack-raring64.box
 
 * Add boxes:
 
