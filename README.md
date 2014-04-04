@@ -52,7 +52,7 @@ $ vagrant box add saucy64 <path_to>/saucy64.box
 
 [Windows + cygwin]
 
-```
+```bash
 $ cd /cygdrive/<letter>/<path_to>/
 $ vagrant box add precise64 precise64.box
 $ cd /cygdrive/<letter>/<path_to>/
@@ -64,14 +64,14 @@ $ vagrant box add raring64 thinkstack-raring64.box
 
 * Download this project:
 
- ```
+ ```bash
 $ git clone https://github.com/icalvete/vagrantfiles.git 
  ```
 
 
 * Download common manifest
 
- ```
+ ```bash
 $ cd  vagrantfiles
 $ cd puppet/modules_sp
 $ git clone https://github.com/smartpurposes/puppet-modules.git .
@@ -81,7 +81,7 @@ $ git submodule update
 
 * Download any manifest you need
 
- ```
+ ```bash
 $ cd ..
 $ cd puppet/modules
 $ git clone  https://< what ever you need >.git
@@ -92,14 +92,14 @@ $ git clone  https://< what ever you need >.git
 * Run any service box  (kyototycoon for example)
 
 
- ```
+ ```bash
 $ cd  vagrantfiles/kyototycoon
 $ vagrant up
  ```
 
 * Connecting to service box
 
- ```
+ ```bash
 $ vagrant ssh
  ```
 
