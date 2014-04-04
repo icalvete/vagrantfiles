@@ -64,44 +64,44 @@ $ vagrant box add raring64 thinkstack-raring64.box
 
 * Download this project:
 
- ```bash
+```bash
 $ git clone https://github.com/icalvete/vagrantfiles.git 
- ```
+```
 
 
 * Download common manifest
 
- ```bash
+```bash
 $ cd  vagrantfiles
 $ cd puppet/modules_sp
 $ git clone https://github.com/smartpurposes/puppet-modules.git .
 $ git submodule init
 $ git submodule update
- ```
+```
 
 * Download any manifest you need
 
- ```bash
+```bash
 $ cd ..
 $ cd puppet/modules
 $ git clone  https://< what ever you need >.git
- ```
+```
 
 ## Using it:
 
 * Run any service box  (kyototycoon for example)
 
 
- ```bash
+```bash
 $ cd  vagrantfiles/kyototycoon
 $ vagrant up
- ```
+```
 
 * Connecting to service box
 
- ```bash
+```bash
 $ vagrant ssh
- ```
+```
 
 ## Extend this service boxes
 
