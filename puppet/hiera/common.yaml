@@ -8,6 +8,7 @@ org_domain: 'smartpurposes.net'
 
 root_log_dir: '/var/log'
 syslog_remote_server: '127.0.0.1'
+syslog_remote_port: '5514'
 syslog_log_dir: 'sp'
 syslog_log: 'sp.log'
 
