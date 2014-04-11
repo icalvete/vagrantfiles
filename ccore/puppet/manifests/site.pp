@@ -15,19 +15,22 @@ node default {
   include ccore
 
   class {'roles::apache2_server':
-    phalcon => true
+    phalcon           => true,
+    file_uploads      => 'On',
+    file_uploads_size => '10M'
   }
 
-  if $php5::params::environment == 'DEV' {
+  apache2::site{'core.vhost.conf':
+    source  => 'axn-server-finder/core.vhost.conf.erb',
+    require => Class['roles::apache2_server']
+  }
 
-    $package = ['php5-dev', 'swig']
-    package {$package:
-      ensure  => present
-    }
+  class {'roles::memcached_server':
+    memory          => '256',
+    max_object_size => '3m'
   }
 
   class{'roles::syslog_sender_server':
     syslog_remote_server => '192.168.33.5'
   }
 }
-
