@@ -15,14 +15,13 @@ node default {
   class {'roles::apache2_server':
     phalcon           => true,
     file_uploads      => 'On',
-    file_uploads_size => '20M'
+    file_uploads_size => '10M'
   }
 
   apache2::site{'core.vhost.conf':
     source  => 'axn-server-finder/core.vhost.conf.erb',
     require => Class['roles::apache2_server']
   }
-
 
   apache2::site{'api.vhost.conf':
     source  => 'axn-server/api.vhost.conf.erb',
