@@ -1,3 +1,4 @@
+*/.vagrant
 apache/www/*
 puppet/modules_sp/
 puppet/modules/
