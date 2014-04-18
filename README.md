@@ -115,7 +115,7 @@ $ vagrant ssh
 
 Put your hiera file in _< where ever >/vagrantfiles/puppet/hiera/common.yaml_
 
-[hiera example](https://github.com/icalvete/vagrantfiles/blob/master/hiera/common.yaml)
+[hiera example](https://github.com/icalvete/vagrantfiles/blob/master/puppet/hiera/common.yaml)
 
 
 ## Authors:
