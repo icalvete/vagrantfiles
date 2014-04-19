@@ -47,3 +47,6 @@ jenkins_plugins:
         - 'sonar'
         - 'greenballs'
         - 'postbuild-task'
+
+elasticsearch_vip: '192.168.33.18'
+elasticsearch_cluster_name: 'vagrant'
