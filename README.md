@@ -98,19 +98,19 @@ $ cd  vagrantfiles/kyototycoon
 $ vagrant up
 ```
 
-* Connecting to service box
+* Connecting to service box:
 
 ```bash
 $ vagrant ssh
 ```
 
-## Extend this service boxes
+## Extend this service boxes:
 
 * Create _< where ever >vagrantfiles/puppet/modules_ and put your own puppet manifests here.
 * Change any _< where ever >/vagrantfiles/< service box >/puppet/manifests/site.pp_ to extend it.
 
 
-## Hiera
+## Hiera:
 
 **Some service box (mysql, rabbitmq...) are using manifest who needs hiera.**
 
