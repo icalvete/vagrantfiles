@@ -38,10 +38,10 @@ Other end points:
 * Download http://files.vagrantup.com/precise64.box
 * Download https://dl.dropboxusercontent.com/u/547671/thinkstack-raring64.box
 
+
 ### Add boxes:
 
 [\*NIX]
-
 
 ```bash
 $ vagrant box add precise64 <path_to>/precise64.box
