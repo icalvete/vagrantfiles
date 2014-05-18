@@ -19,6 +19,8 @@ sp_repo_user: ''
 sp_repo_pass: ''
 sp_repo_path: ''
 
+htpasswd_file: '/etc/apache2/htpasswd'
+
 elasticsearch_package: 'elasticsearch-0.90.5.deb'
 rabbitmq_package: 'rabbitmq-server_3.1.5-1_all.deb'
 
@@ -50,3 +52,6 @@ jenkins_plugins:
 
 elasticsearch_vip: '192.168.33.18'
 elasticsearch_cluster_name: 'vagrant'
+
+kibana_package: 'kibana-3.0.0.tar.gz'
+kibana_document_root: '/srv/kibana'
