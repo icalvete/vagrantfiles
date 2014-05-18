@@ -12,7 +12,13 @@ node default {
     value => $environment,
   }
 
+  include common::virtual
+  include roles::elasticsearch_server
   include roles::syslog_remote_server
+  include roles::kibana_server
 
+  class { 'roles::td_agent_server':
+    elasticsearch_host => '127.0.0.1'
+  }
 }
 
