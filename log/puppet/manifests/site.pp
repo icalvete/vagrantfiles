@@ -18,6 +18,7 @@ node default {
   include roles::kibana_server
 
   class { 'roles::td_agent_server':
+    config_template    => 'fluentd/volta.conf.erb',
     elasticsearch_host => '127.0.0.1'
   }
 }
