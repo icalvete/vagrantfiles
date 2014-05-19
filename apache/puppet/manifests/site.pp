@@ -15,7 +15,8 @@ node default {
   class {'roles::apache2_server':
     phalcon           => true,
     file_uploads      => 'On',
-    file_uploads_size => '10M'
+    file_uploads_size => '10M',
+    environment       => $environment
   }
 
   apache2::site{'core.vhost.conf':
