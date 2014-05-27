@@ -16,7 +16,6 @@ node default {
     phalcon           => true,
     file_uploads      => 'On',
     file_uploads_size => '10M',
-    environment       => $environment
   }
 
   apache2::site{'core.vhost.conf':
