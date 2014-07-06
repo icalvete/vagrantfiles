@@ -17,8 +17,11 @@ node default {
   include roles::syslog_remote_server
   include roles::kibana_server
 
+  class{'roles::syslog_sender_server':
+    syslog_remote_server => '127.0.0.1'
+  }
+
   class { 'roles::td_agent_server':
-    config_template    => 'fluentd/volta.conf.erb',
     elasticsearch_host => '127.0.0.1'
   }
 }
