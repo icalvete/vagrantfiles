@@ -6,6 +6,10 @@ backup_dir: '/srv/backup'
 org: 'sp'
 org_domain: 'smartpurposes.net'
 
+apache26_dists:
+        - 'saucy'
+        - 'trusty'
+
 root_log_dir: '/var/log'
 syslog_remote_server: '127.0.0.1'
 syslog_remote_port: '5514'
