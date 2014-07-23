@@ -59,3 +59,5 @@ elasticsearch_cluster_name: 'vagrant'
 
 kibana_package: 'kibana-3.0.0.tar.gz'
 kibana_document_root: '/srv/kibana'
+kibana_user: 'kibana'
+kibana_pass: 'k1b4n4'
