@@ -25,7 +25,7 @@ sp_repo_path: ''
 
 htpasswd_file: '/etc/apache2/htpasswd'
 
-elasticsearch_package: 'elasticsearch-0.90.5.deb'
+elasticsearch_package: 'elasticsearch-1.2.1.deb'
 rabbitmq_package: 'rabbitmq-server_3.1.5-1_all.deb'
 
 mysql_root_user: 'root'
