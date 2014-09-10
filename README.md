@@ -13,8 +13,8 @@ Vagrant files to build some service boxes
 
 [Common]
 
-* Install Virtual Box  4.3.6 from https://www.virtualbox.org/wiki/Downloads
-* Install Vagrant 1.4.2 from http://www.vagrantup.com/downloads
+* Install Virtual Box => 4.3.6 from https://www.virtualbox.org/wiki/Downloads
+* Install Vagrant 1.6.5 from http://www.vagrantup.com/downloads
 
 [\*NIX]
 
@@ -29,7 +29,7 @@ Vagrant files to build some service boxes
 
 [Common]
 
-* Download boxes (precise64.box, raring64.box,  saucy64.box)
+* Download boxes (precise64.box, raring64.box,  saucy64.box, trusty64)
 
 **[Boxes uptated at 01/2014 with latest puppet can be found here](https://drive.google.com/folderview?id=0B7WTTQeWTJErRGFUUlUzaW9OSW8&usp=sharing)**
 
@@ -37,6 +37,7 @@ Other end points:
 
 * Download http://files.vagrantup.com/precise64.box
 * Download https://dl.dropboxusercontent.com/u/547671/thinkstack-raring64.box
+* https://vagrantcloud.com/ **really good option !!!**
 
 
 ### Add boxes:
@@ -47,6 +48,7 @@ Other end points:
 $ vagrant box add precise64 <path_to>/precise64.box
 $ vagrant box add raring64 <path_to>/raring64.box
 $ vagrant box add saucy64 <path_to>/saucy64.box
+$ vagrant box add saucy64 <path_to>/trusty.box
 ```
 
 
