@@ -17,7 +17,7 @@ sp_log_dir: 'sp'
 sp_log: 'sp.log'
 
 sp_repo_scheme: 'http'
-sp_repo_domain: 'smarpurposes-repo.s3-website-eu-west-1.amazonaws.com/'
+sp_repo_domain: 'smarpurposes-repo.s3-website-eu-west-1.amazonaws.com'
 sp_repo_port: ''
 sp_repo_user: ''
 sp_repo_pass: ''
