@@ -5,7 +5,18 @@ Stage[pre] -> Stage[main] -> Stage[post]
 
 node default {
 
+  class {'common::vagrant':
+    stage => pre
+  }
+
+  common::set_localtime{'set_localtime':
+    zone => 'Europe/Madrid'
+  }
+
   $environment = hiera('environment')
+
+  $apache26_dists = hiera('apache26_dists')
+  $apache26       = member($apache26_dists, $lsbdistcodename)
 
   common::add_env{'APPLICATION_ENV':
     key   => 'APPLICATION_ENV',
