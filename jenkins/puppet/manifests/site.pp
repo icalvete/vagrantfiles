@@ -7,6 +7,14 @@ node default {
 
   include common::virtual
 
+  class {'common::vagrant':
+    stage => pre
+  }
+
+  common::set_localtime{'set_localtime':
+    zone => 'Europe/Madrid'
+  }
+
   # Put here your RSA key
   $private_key = '-----BEGIN RSA PRIVATE KEY-----
   MIIEowIBAAKCAQEA3sBYray9Muc3ZKAlTO4lq/n4ZiM7OZrjAgaSahH/UnF9mA5b

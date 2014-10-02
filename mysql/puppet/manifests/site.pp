@@ -5,6 +5,14 @@ Stage[pre] -> Stage[main] -> Stage[post]
 
 node default {
 
+  class {'common::vagrant':
+    stage => pre
+  }
+
+  common::set_localtime{'set_localtime':
+    zone => 'Europe/Madrid'
+  }
+
   $root_user  = hiera('mysql_root_user')
   $root_pass  = hiera('mysql_root_pass')
   $backup_dir = hiera('backup_dir')
