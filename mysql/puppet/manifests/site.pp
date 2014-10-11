@@ -9,6 +9,8 @@ node default {
     stage => pre
   }
 
+  realize Package['ruby1.9.1-dev']
+
   common::set_localtime{'set_localtime':
     zone => 'Europe/Madrid'
   }
