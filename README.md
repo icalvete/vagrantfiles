@@ -48,7 +48,7 @@ Other end points:
 $ vagrant box add precise64 <path_to>/precise64.box
 $ vagrant box add raring64 <path_to>/raring64.box
 $ vagrant box add saucy64 <path_to>/saucy64.box
-$ vagrant box add saucy64 <path_to>/trusty.box
+$ vagrant box add trusty64 <path_to>/trusty.box
 ```
 
 
