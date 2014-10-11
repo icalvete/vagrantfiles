@@ -27,6 +27,7 @@ node default {
     phalcon           => true,
     file_uploads      => 'On',
     file_uploads_size => '10M',
+    wsgi              => true
   }
 
   class{'roles::syslog_sender_server':
