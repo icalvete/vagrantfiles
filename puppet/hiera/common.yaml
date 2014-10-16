@@ -56,6 +56,10 @@ jenkins_plugins:
 
 elasticsearch_vip: '192.168.33.18'
 elasticsearch_cluster_name: 'vagrant'
+elasticsearch_admin: 'admin'
+elasticsearch_admin_pass: '3l4dm1n.-'
+elasticsearch_user: 'el'
+elasticsearch_user_pass: '3lus3r.-'
 
 kibana_package: 'kibana-3.0.0.tar.gz'
 kibana_document_root: '/srv/kibana'
