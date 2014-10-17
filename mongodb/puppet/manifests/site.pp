@@ -25,16 +25,6 @@ node default {
     mode   => '0755',
   }
 
-  $backup_dir = hiera('backup_dir')
-
-  file {'backup_dir':
-    ensure => directory,
-    path   => $backup_dir,
-    owner  => 'root',
-    group  => 'root',
-    mode   => '0755',
-  }
-
   class {'roles::mongodb_server':
     require => File['backup_dir']
   }
