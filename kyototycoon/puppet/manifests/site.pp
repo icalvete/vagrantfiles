@@ -13,6 +13,8 @@ node default {
     zone => 'Europe/Madrid'
   }
 
+  $backup_dir = hiera('backup_dir')
+
   file {'backup_dir':
     ensure => directory,
     path   => $backup_dir,
@@ -20,8 +22,6 @@ node default {
     group  => 'root',
     mode   => '0755',
   }
-
-  class {'roles::mongodb_server':
 
   class {'roles::kyototycoon_server':
     memcached => true
