@@ -86,6 +86,7 @@ $ git submodule update
 
 ```bash
 $ cd ..
+$ mkdir puppet/modules
 $ cd puppet/modules
 $ git clone  https://< what ever you need >.git
 ```
