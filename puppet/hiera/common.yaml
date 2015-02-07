@@ -25,8 +25,8 @@ sp_repo_path: ''
 
 htpasswd_file: '/etc/apache2/htpasswd'
 
-elasticsearch_package: 'elasticsearch-1.2.1.deb'
-rabbitmq_package: 'rabbitmq-server_3.1.5-1_all.deb'
+elasticsearch_package: 'elasticsearch-1.4.2.deb'
+rabbitmq_package: 'rabbitmq-server_3.4.3-1_all.deb'
 
 mysql_root_user: 'root'
 mysql_root_pass: 'mysql'
@@ -54,7 +54,7 @@ jenkins_plugins:
         - 'greenballs'
         - 'postbuild-task'
 
-elasticsearch_vip: '192.168.33.18'
+elasticsearch_vip: '192.168.33.19'
 elasticsearch_cluster_name: 'vagrant'
 elasticsearch_admin: 'admin'
 elasticsearch_admin_pass: '3l4dm1n.-'
@@ -65,3 +65,38 @@ kibana_package: 'kibana-3.0.0.tar.gz'
 kibana_document_root: '/srv/kibana'
 kibana_user: 'kibana'
 kibana_pass: 'k1b4n4'
+
+rundeck_db_host: '192.168.33.15'
+rundeck_db: 'rundeck'
+rundeck_db_user: 'rundeck'
+rundeck_db_pass: 'rund3ck'
+rundeck_admin_user: 'admin'
+rundeck_admin_pass: 'rund3ckadmin'
+rundeck_ssh_public_key: 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC6b/aJTQU4QDQiut1V9xbAEq2BZIZMhrXbzOGcU6T+UzCF2wWEk/bH7/Xk9RnnZ8Bop2Vl1rgYuAGeW5MXd3fRwGCOlc84qaofPkurlkeKgSufPwBbgGgAuk7u2piw2zNbXklvTv1wp7sdA+VKGMdjAbFn3sunynWBR0zFtnpK8Bf1skeCGuVNx+DTA+CSf4jwhKTAiptTrYBCATBKV8fI+FoUoBKq0pGgDKmAP365pX4SESsMpBFRx+08gvXeQt9fiFWOorZT77LXogy0g8lumrRGg86LFSrxNkonSK1lYrEAzRiWkV5q9hmgzpn6yoO2Tq50yWVXKxVDPwLxA7U3 root@yoda'
+rundeck_ssh_key: '-----BEGIN RSA PRIVATE KEY-----
+        MIIEogIBAAKCAQEAum/2iU0FOEA0IrrdVfcWwBKtgWSGTIa128zhnFOk/lMwhdsF
+        hJP2x+/15PUZ52fAaKdlZda4GLgBnluTF3d30cBgjpXPOKmqHz5Lq5ZHioErnz8A
+        W4BoALpO7tqYsNszW15Jb079cKe7HQPlShjHYwGxZ97Lp8p1gUdMxbZ6SvAX9bJH
+        ghrlTcfg0wPgkn+I8ISkwIqbU62AQgEwSlfHyPhaFKASqtKRoAypgD9+uaV+EhEr
+        DKQRUcftPIL13kLfX4hVjqK2U++y16IMtIPJbpq0RoPOixUq8TZKJ0itZWKxAM0Y
+        lpFeavYZoM6Z+sqDtk6udMllVysVQz8C8QO1NwIDAQABAoIBAEnQKECl8MobiUiy
+        yQzO/f/fpTgUb6N+tiOm0zAMYcebchuc4mtiFZOFKsqSS8Y1apVEqT2PrGWE/IcQ
+        5ISm9RZjXxc0ss1RRxyFknoFzp9EktvCmsafaQ3YtYWVoFxs/MFQ7CwYjvj6P3e2
+        YiJa+x30vqNMLz9oReuAKiIhI/vks5yM6Cr0X2PXq7Q4OoroIgyZ05pzxGYeHBsg
+        eww95qJ3Dxwxt28Kw8ef2F8i7ZQjgVnImk/x7qsEWO6RZnMDpbO+nDRZw/NlqY1k
+        bGO8SsfzzXy3sgb8ngFDbsPu10xsT/587lMtM/6j8xnihiKbwqrTPtqxXq9XAw9S
+        W1saetECgYEA58dll3Cu8Aus+7XxtbCrqcPaEOX3M8FQKbvELpSM3CaVLZK9CQyB
+        VMdFWAOoyCDboxvFrOOMEz1/W0VlewU326SWDt23hjqHvUxS6A6XnFgREcl5BXF0
+        40dwWibpIywHB77czL5zFgGlQ6C6g1YVHy9KrvxMDsY5eKqYiKpevn8CgYEAzeuU
+        KWokyg09sqEDYVzBL30O0RnQncm6pBw/xHuaF/CrXBH0rp/OIGsRxOmMfp/1369n
+        /tnGwepNZ7gB2qo3fpdL5txFeJrV6MlbvBLyrEME1JgVcZHZnOYmght9VXJhCL7J
+        gQMwb2J6n0OOvF2iDVVcDDLhgbHKpVgpCAAVHUkCgYAZTth09MTlSSEWSwOdhzD3
+        VH9XIQUhDZanN+1v+KB42W2okEE737WvgCK+PYgMcioJYVrwSdhdsXVajfVKvYMf
+        5JTOAr+rVHDF5rOWyyEa3TLf8lPYmE7fEkneTilewcvyuJB7esAuQve8rqwu8xNT
+        WGKbQMk9Q7+6wUXuhkvaGQKBgGFWYXPuM7O67JY6nEFyufL7t3xKKp3blLksjUwQ
+        bTex0R61cib1bVdPpVeiWoIklPIGlS8XvGc/nRVRGrdFTPQvCnb3WnN3JXRjclSF
+        1GZvS6I+vawwmGAdPsizu9wfNBURMmkkm8mbEIGmSptp20dYOSmfB4/p/fOIp+Sb
+        PV/ZAoGACNFETgh8/47aN8+IqgzkX/+LumzpabIbLb7xzNqf3fd5FnTcBWbivKBA
+        oZtnGZA+6Uu1c1Q+wl/SkkR698ClZvhSR0MHb5Az2I/Ktz67aGfX8S62XLcW5M47
+        HQodiWq76SRNHHWop1JEzQHVIv7/e1QgXNRLE56DmmNoiADf2PA=
+        -----END RSA PRIVATE KEY-----'
