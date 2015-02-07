@@ -2,7 +2,7 @@
 
 Vagrant files to build some service boxes
 
-**All Vagrant Files are configured to use saucy64 as box. Feel free to customize files**
+**All Vagrant Files are configured to use https://vagrantcloud.com/puppetlabs/boxes/ubuntu-14.04-64-puppet as box. Feel free to customize files**
 
 ## Requires:
 
@@ -29,38 +29,37 @@ Vagrant files to build some service boxes
 
 [Common]
 
-* Download boxes (precise64.box, raring64.box,  saucy64.box, trusty64)
-
-**[Boxes uptated at 01/2014 with latest puppet can be found here](https://drive.google.com/folderview?id=0B7WTTQeWTJErRGFUUlUzaW9OSW8&usp=sharing)**
-
-Other end points:
-
-* Download http://files.vagrantup.com/precise64.box
-* Download https://dl.dropboxusercontent.com/u/547671/thinkstack-raring64.box
-* https://vagrantcloud.com/ **really good option !!!**
-
-
 ### Add boxes:
+* Download boxes
 
-[\*NIX]
-
-```bash
-$ vagrant box add precise64 <path_to>/precise64.box
-$ vagrant box add raring64 <path_to>/raring64.box
-$ vagrant box add saucy64 <path_to>/saucy64.box
-$ vagrant box add trusty64 <path_to>/trusty.box
-```
-
-
-[Windows + cygwin]
+Choose the right backend (In this case, virtualbox)
+See the example at the end of the seccion.
 
 ```bash
-$ cd /cygdrive/<letter>/<path_to>/
-$ vagrant box add precise64 precise64.box
-$ cd /cygdrive/<letter>/<path_to>/
-$ vagrant box add raring64 thinkstack-raring64.box
+$ vagrant box add https://vagrantcloud.com/puppetlabs/boxes/ubuntu-12.04-64-puppet
+$ vagrant box add https://vagrantcloud.com/puppetlabs/boxes/ubuntu-14.04-64-puppet 
 ```
 
+Chossing the right backend (virtualbox)
+
+```bash
+$ vagrant box add https://vagrantcloud.com/puppetlabs/boxes/centos-7.0-64-puppet
+==> box: Loading metadata for box 'https://vagrantcloud.com/puppetlabs/boxes/centos-7.0-64-puppet'
+This box can work with multiple providers! The providers that it
+can work with are listed below. Please review the list and choose
+the provider you will be working with.
+
+1) virtualbox
+2) vmware_desktop
+3) vmware_fusion
+
+Enter your choice: 1
+==> box: Adding box 'puppetlabs/centos-7.0-64-puppet' (v1.0.0) for provider: virtualbox
+    box: Downloading: https://vagrantcloud.com/puppetlabs/boxes/centos-7.0-64-puppet/versions/1.0.0/providers/virtualbox.box
+    box:
+```
+
+### Setting up the environment
 
 [Common]
 
