@@ -5,8 +5,6 @@ Stage[pre] -> Stage[main] -> Stage[post]
 
 node default {
 
-  include common::virtual
-
   class {'common::vagrant':
     stage => pre
   }
