@@ -52,5 +52,7 @@ node default {
   }
 
   include php5
-  include roles::elasticsearch_server
+  class {'roles::elasticsearch_server':
+    backup => false
+  }
 }
