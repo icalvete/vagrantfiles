@@ -26,7 +26,7 @@ sp_repo_path: ''
 htpasswd_file: '/etc/apache2/htpasswd'
 
 elasticsearch_package: 'elasticsearch-1.4.2.deb'
-rabbitmq_package: 'rabbitmq-server_3.4.3-1_all.deb'
+rabbitmq_package: 'rabbitmq-server_3.4.4-1_all.deb'
 
 mysql_root_user: 'root'
 mysql_root_pass: 'mysql'
@@ -100,3 +100,8 @@ rundeck_ssh_key: '-----BEGIN RSA PRIVATE KEY-----
         oZtnGZA+6Uu1c1Q+wl/SkkR698ClZvhSR0MHb5Az2I/Ktz67aGfX8S62XLcW5M47
         HQodiWq76SRNHHWop1JEzQHVIv7/e1QgXNRLE56DmmNoiADf2PA=
         -----END RSA PRIVATE KEY-----'
+
+AWS_ACCESS_KEY_ID: '******************'
+AWS_SECRET_ACCESS_KEY: '******************'
+aws_elasticsearch_backup_region: 'eu-west-1'
+aws_elasticsearch_backup_bucket: 'elasticsearch-sp-backup'
