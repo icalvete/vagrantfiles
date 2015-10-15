@@ -4,6 +4,8 @@ Vagrant files to build some service boxes
 
 **All Vagrant Files are configured to use https://vagrantcloud.com/puppetlabs/boxes/ubuntu-14.04-64-puppet as box. Feel free to customize files**
 
+**Box version (config.vm.box_version) must be <= 1.0.1'**
+
 ## Requires:
 
 * [hiera](http://docs.puppetlabs.com/hiera/1/index.html)
