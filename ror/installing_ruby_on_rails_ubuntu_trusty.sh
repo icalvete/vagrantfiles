@@ -19,13 +19,13 @@ echo 'eval "$(rbenv init -)"' >> ~/.bashrc
 echo 'export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"' >> ~/.bashrc
 git clone git://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
 . ~/.bashrc
-/home/vagrant/.rbenv/bin/rbenv install -v 2.2.3
-/home/vagrant/.rbenv/bin/rbenv global 2.2.3
+${HOME}/.rbenv/bin/rbenv install -v 2.2.3-p173
+${HOME}/.rbenv/bin/rbenv global 2.2.3-p173
 echo "gem: --no-document" > ~/.gemrc
-gem install bundler -v 2.4.5.1
+gem install bundler
 # 4.2.3 version for Coursera course
 gem install rails -v 4.2.3
-rbenv rehash
+${HOME}/.rbenv/bin/rbenv rehash
 export PHANTOM_JS="phantomjs-1.9.8-linux-x86_64"
 cd /tmp
 curl -L https://bitbucket.org/ariya/phantomjs/downloads/$PHANTOM_JS.tar.bz2 | tar xvjf -
