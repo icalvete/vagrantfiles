@@ -29,6 +29,7 @@ python-software-properties \
 libffi-dev \
 libgdm-dev \
 libncurses5-dev \
+libmysqlclient-dev \
 automake \
 autoconf \
 libtool \
