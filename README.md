@@ -4,7 +4,7 @@ Vagrant files to build some service boxes
 
 **All Vagrant Files are configured to use https://vagrantcloud.com/puppetlabs/boxes/ubuntu-14.04-64-puppet as box. Feel free to customize files**
 
-**Box version (config.vm.box_version) must be <= 1.0.1'**
+**Box version (config.vm.box_version) must be <= 1.0.1**
 
 ## Requires:
 
@@ -87,8 +87,8 @@ $ git submodule update
 
 ```bash
 $ cd ..
-$ mkdir puppet/modules
-$ cd puppet/modules
+$ mkdir modules
+$ cd modules
 $ git clone  https://< what ever you need >.git
 ```
 
