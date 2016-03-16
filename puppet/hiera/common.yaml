@@ -12,7 +12,8 @@ apache26_dists:
 
 root_log_dir: '/var/log'
 syslog_remote_server: '127.0.0.1'
-syslog_remote_port: '5514'
+syslog_remote_port: 5514
+fluentd_remote_port: 5514
 sp_log_dir: 'sp'
 sp_log: 'sp.log'
 
