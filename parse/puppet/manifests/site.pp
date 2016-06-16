@@ -28,5 +28,7 @@ node default {
   class {'roles::mongodb_server':
     require => File['backup_dir']
   }
+
+  include nodejs
 }
 
