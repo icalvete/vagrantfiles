@@ -29,6 +29,8 @@ node default {
     require => File['backup_dir']
   }
 
-  include nodejs
+  class {'roles::parse_server':
+    application_id => 'whateveryouwant',
+    master_key     => 'whateveryouwant',
+  }
 }
-
