@@ -25,8 +25,20 @@ node default {
     mode   => '0755',
   }
 
-  class {'roles::mongodb_server':
-    require => File['backup_dir']
+  class {'::mongodb::globals':
+    version             => '3.2.7',
+    manage_package_repo => true,
+    bind_ip             => '0.0.0.0'
+  }->
+  class {'::mongodb::client': }->
+  class {'::mongodb::server':
+    verbose       => true,
+    require       => Class['mongodb::globals']
+  }
+
+  package { 'mongodb-org-tools':
+    ensure  => present,
+   require => Class['mongodb::server']
   }
 }
 

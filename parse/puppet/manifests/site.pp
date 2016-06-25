@@ -25,12 +25,42 @@ node default {
     mode   => '0755',
   }
 
-  class {'roles::mongodb_server':
-    require => File['backup_dir']
+  class {'::mongodb::globals':
+    version             => '3.2.7',
+    manage_package_repo => true,
+    bind_ip             => '0.0.0.0'
+  }->
+  class {'::mongodb::client': }->
+  class {'::mongodb::server':
+    verbose       => true,
+    set_parameter => ['failIndexKeyTooLong: false', 'textSearchEnabled: true'],
+    require       => Class['mongodb::globals']
   }
 
-  class {'roles::parse_server':
-    application_id => 'whateveryouwant',
-    master_key     => 'whateveryouwant',
+  package { 'mongodb-org-tools':
+    ensure  => present,
+    require => Class['mongodb::server']
+  }
+
+  include nodejs
+
+  parse_platform::app {'app1':
+    application_id => '111',
+    master_key     => '111',
+    require        => Class['nodejs']
+  }
+
+  parse_platform::app {'app2':
+    application_id   => '222',
+    master_key       => '222',
+    port             => 1338,
+    cloud_code       => true,
+    cloud_repository => 'https://github.com/Npmorales/Cloud_code.git',
+    dashboard        => true,
+    javascript_key   => '222',
+    rest_key         => '222',
+    dashboard_user   => 'user',
+    dashboard_pass   => 'pass',
+    require          => Class['nodejs']
   }
 }
