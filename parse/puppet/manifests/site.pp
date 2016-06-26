@@ -24,6 +24,11 @@ node default {
     group  => 'root',
     mode   => '0755',
   }
+  
+  apt::key { 'mongodb-org-tools_key':
+    id      => 'D68FA50FEA312927',
+    server  => 'keyserver.ubuntu.com'
+  }
 
   class {'::mongodb::globals':
     version             => '3.2.7',
