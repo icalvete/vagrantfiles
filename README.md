@@ -38,8 +38,8 @@ Choose the right backend (In this case, virtualbox)
 See the example at the end of the seccion.
 
 ```bash
-$ vagrant box add https://vagrantcloud.com/puppetlabs/boxes/ubuntu-12.04-64-puppet
-$ vagrant box add https://vagrantcloud.com/puppetlabs/boxes/ubuntu-14.04-64-puppet 
+$ vagrant box add icalvete/ubuntu-12.04-64-puppet
+$ vagrant box add icalvete/ubuntu-14.04-64-puppet 
 ```
 
 Chossing the right backend (virtualbox)
