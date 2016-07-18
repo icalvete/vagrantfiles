@@ -11,7 +11,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   # Every Vagrant virtual environment requires a box to build off of.
   config.vm.box = "icalvete/ubuntu-14.04-64-puppet"
-  config.vm.box_version = "<= 1.0.1"
+  config.vm.box_version = "<= 0.0.1"
   config.vm.hostname = "memcached"
 
   # The url from where the 'config.vm.box' box will be fetched if it
