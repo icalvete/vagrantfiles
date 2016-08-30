@@ -5,6 +5,7 @@ Creating my own vagrant box 4 Ruby or Ruby on Rails development environment.
 # Overview
 
 This box was created using https://github.com/icalvete/vagrant-ror-box
+
 The final box is https://atlas.hashicorp.com/icalvete/boxes/ror/versions/0.0.2
 
 At the end, the box offers...
