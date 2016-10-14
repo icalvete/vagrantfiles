@@ -15,7 +15,7 @@ node default {
     key   => 'RAILS_ENV',
     value => 'development',
   }
-  
+
   common::add_env{'RACK_ENV':
     key   => 'RAILS_ENV',
     value => 'development',
@@ -26,5 +26,10 @@ node default {
     user     => 'root',
     unless   => '/usr/bin/dpkg -l heroku-toolbelt | grep ii',
     provider => shell
+  }
+
+  class {'roles::memcached_server':
+    memory          => '256',
+    max_object_size => '3m'
   }
 }
