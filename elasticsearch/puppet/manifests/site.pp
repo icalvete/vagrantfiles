@@ -5,9 +5,9 @@ Stage[pre] -> Stage[main] -> Stage[post]
 
 node default {
 
-  #class {'common::vagrant':
-  #  stage => pre
-  #}
+  package { 'software-properties-common':
+    ensure => present
+  }
 
   common::set_localtime{'set_localtime':
     zone => 'Europe/Madrid'
@@ -20,11 +20,15 @@ node default {
     value => $environment
   }
 
-  include php5
+  include apt
+  apt::ppa { 'ppa:ondrej/php': }
+  include php5::php5_cli
+
+  $repo_version = '5.x'
 
   class {'roles::elasticsearch_server':
-    version      => '2.2.0',
-    hosts        => ['192.168.33.19', '192.168.33.20'],
+    java_install => true,
+    repo_version => $repo_version,
     bind_host    => $ipaddress_eth1,
     publish_host => $ipaddress_eth1,
   }
