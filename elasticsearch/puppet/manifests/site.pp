@@ -25,7 +25,7 @@ node default {
   $repo_version = '5.x'
 
   class {'roles::elasticsearch_server':
-   java_install     => true,
+    java_install     => true,
     repo_version     => $repo_version,
     bind_host        => $ipaddress_enp0s8,
     publish_host     => $ipaddress_enp0s8,
