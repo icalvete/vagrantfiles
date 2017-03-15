@@ -20,16 +20,15 @@ node default {
     value => $environment
   }
 
-  include apt
-  apt::ppa { 'ppa:ondrej/php': }
   include php5::php5_cli
 
   $repo_version = '5.x'
 
   class {'roles::elasticsearch_server':
-    java_install => true,
-    repo_version => $repo_version,
-    bind_host    => $ipaddress_eth1,
-    publish_host => $ipaddress_eth1,
+   java_install     => true,
+    repo_version     => $repo_version,
+    bind_host        => $ipaddress_enp0s8,
+    publish_host     => $ipaddress_enp0s8,
+    default_template => false
   }
 }
