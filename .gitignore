@@ -1,4 +1,7 @@
 */.vagrant
 apache/www/*
+ror/www/*
+ror/data/*
+nifi/data/*
 puppet/modules_sp/
 puppet/modules/
