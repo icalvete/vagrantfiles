@@ -2,7 +2,7 @@
 
 Vagrant files to build some service boxes
 
-**All Vagrant Files are configured to use https://vagrantcloud.com/puppetlabs/boxes/ubuntu-14.04-64-puppet as box. Feel free to customize files**
+**All Vagrant Files are configured to use https://atlas.hashicorp.com/icalvete/boxes/ubuntu-16.04-64-puppet as box. Feel free to customize files**
 
 **Box version (config.vm.box_version) must be <= 0.0.1**
 
