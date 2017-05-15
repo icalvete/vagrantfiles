@@ -5,9 +5,7 @@ Stage[pre] -> Stage[main] -> Stage[post]
 
 node default {
 
-  class {'common::vagrant':
-    stage => pre
-  }
+  include common
 
   common::set_localtime{'set_localtime':
     zone => 'Europe/Madrid'
