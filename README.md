@@ -76,7 +76,6 @@ $ git clone https://github.com/icalvete/vagrantfiles.git
 
 ```bash
 $ cd  vagrantfiles
-$ mkdir puppet/modules_sp
 $ rm puppet/modules_sp/.gitkeep
 $ git clone https://github.com/smartpurposes/puppet-modules.git .
 $ git submodule init
