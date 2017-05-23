@@ -77,7 +77,7 @@ $ git clone https://github.com/icalvete/vagrantfiles.git
 ```bash
 $ cd  vagrantfiles
 $ mkdir puppet/modules_sp
-$ cd puppet/modules_sp
+$ rm puppet/modules_sp/.gitkeep
 $ git clone https://github.com/smartpurposes/puppet-modules.git .
 $ git submodule init
 $ git submodule update
@@ -87,7 +87,7 @@ $ git submodule update
 
 ```bash
 $ cd ..
-$ mkdir modules
+$ rm modules/.gitkeep
 $ cd modules
 $ git clone  https://< what ever you need >.git
 ```
