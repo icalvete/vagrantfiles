@@ -32,4 +32,30 @@ node default {
     memory          => '256',
     max_object_size => '3m'
   }
+
+  $backup_dir = hiera('backup_dir')
+
+  file {'backup_dir':
+    ensure => directory,
+    path   => $backup_dir,
+    owner  => 'root',
+    group  => 'root',
+    mode   => '0755',
+  }
+
+  class {'::mongodb::globals':
+    version             => '3.2.7',
+    manage_package_repo => true,
+    bind_ip             => '0.0.0.0'
+  }->
+  class {'::mongodb::client': }->
+  class {'::mongodb::server':
+    verbose       => true,
+    require       => Class['mongodb::globals']
+  }
+
+  package { 'mongodb-org-tools':
+    ensure  => present,
+    require => Class['mongodb::server']
+  }
 }

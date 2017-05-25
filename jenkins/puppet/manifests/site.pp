@@ -5,9 +5,7 @@ Stage[pre] -> Stage[main] -> Stage[post]
 
 node default {
 
-  class {'common::vagrant':
-    stage => pre
-  }
+  include common
 
   common::set_localtime{'set_localtime':
     zone => 'Europe/Madrid'
@@ -52,19 +50,11 @@ node default {
   }
 
   class {'roles::jenkins_server':
-    repo_resource => 'jenkins_1.544_all.deb',
+    admin_pass => 'jenkins',
+    ssl        => true,
   }
 
   $jenkins_ssh_dir = "${jenkins::params::config_path}/.ssh"
-
-  file{ 'jenkins_ssh_dir':
-    ensure  => directory,
-    path    => $jenkins_ssh_dir,
-    owner   => 'jenkins',
-    group   => $jenkins::params::group,
-    mode    => '0700',
-    require => Class['roles::jenkins_server']
-  }
 
   file{ 'jenkins_private_ssh_key':
     ensure  => present,
@@ -73,7 +63,7 @@ node default {
     owner   => 'jenkins',
     group   => $jenkins::params::group,
     mode    => '0600',
-    require => File['jenkins_ssh_dir']
+    require => Class['jenkins']
   }
 
   file{ 'jenkins_public_ssh_key':
@@ -83,6 +73,6 @@ node default {
     owner   => 'jenkins',
     group   => $jenkins::params::group,
     mode    => '0644',
-    require => File['jenkins_ssh_dir']
+    require => Class['jenkins']
   }
 }

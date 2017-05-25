@@ -5,9 +5,12 @@ Stage[pre] -> Stage[main] -> Stage[post]
 
 node default {
 
-  class {'common::vagrant':
-    stage => pre
+  package { 'build-essential':
+    ensure  => present
   }
+
+  include common
+  include nodejs
 
   common::set_localtime{'set_localtime':
     zone => 'Europe/Madrid'
@@ -24,34 +27,17 @@ node default {
     group  => 'root',
     mode   => '0755',
   }
-  
-  apt::key { 'mongodb-org-tools_key':
-    id      => 'D68FA50FEA312927',
-    server  => 'keyserver.ubuntu.com'
-  }
 
-  class {'::mongodb::globals':
-    version             => '3.2.7',
-    manage_package_repo => true,
-    bind_ip             => '0.0.0.0'
-  }->
-  class {'::mongodb::client': }->
-  class {'::mongodb::server':
-    verbose       => true,
-    set_parameter => ['failIndexKeyTooLong: false', 'textSearchEnabled: true'],
-    require       => Class['mongodb::globals']
+  class {'roles::mongodb_server':
+    auth          => false,
+    backup_dir    => $backup_dir,
+    rest          => false
   }
-
-  package { 'mongodb-org-tools':
-    ensure  => present,
-    require => Class['mongodb::server']
-  }
-
-  include nodejs
 
   parse_platform::app {'app1':
     application_id => '111',
     master_key     => '111',
+    cloud_code       => true,
     require        => Class['nodejs']
   }
 
@@ -60,7 +46,6 @@ node default {
     master_key       => '222',
     port             => 1338,
     cloud_code       => true,
-    cloud_repository => 'https://github.com/Npmorales/Cloud_code.git',
     dashboard        => true,
     javascript_key   => '222',
     rest_key         => '222',

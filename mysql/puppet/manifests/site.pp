@@ -5,14 +5,15 @@ Stage[pre] -> Stage[main] -> Stage[post]
 
 node default {
 
-  class {'common::vagrant':
-    stage => pre
-  }
-
-  realize Package['ruby1.9.1-dev']
-
+  include common
   common::set_localtime{'set_localtime':
     zone => 'Europe/Madrid'
+  }
+
+  $ruby_packages = ['ruby', 'ruby-dev', 'build-essential', 'libsqlite3-dev', 'zlib1g-dev']
+
+  package {$ruby_packages:
+    ensure => present
   }
 
   $root_user  = hiera('mysql_root_user')

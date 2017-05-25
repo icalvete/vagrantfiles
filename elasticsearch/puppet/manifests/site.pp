@@ -5,9 +5,7 @@ Stage[pre] -> Stage[main] -> Stage[post]
 
 node default {
 
-  package { 'software-properties-common':
-    ensure => present
-  }
+  include common
 
   common::set_localtime{'set_localtime':
     zone => 'Europe/Madrid'

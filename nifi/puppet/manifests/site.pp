@@ -5,9 +5,8 @@ Stage[pre] -> Stage[main] -> Stage[post]
 
 node default {
 
-  package{'software-properties-common':}
-  package{'git':}
-  
+  include common
+
   common::set_localtime{'set_localtime':
     zone => 'Europe/Madrid'
   }
@@ -20,4 +19,13 @@ node default {
   }
 
   include roles::nifi_server
+
+  nifi_pg {'test':
+    ensure => present
+  }
+
+  nifi_template {'IN.hmStaff.taskStatus.xml':
+    path   => 'https://elrond.fluzo.com/IN.hmStaff.taskStatus.xml',
+    ensure => present
+  }
 }

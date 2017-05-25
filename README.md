@@ -40,6 +40,7 @@ See the example at the end of the seccion.
 ```bash
 $ vagrant box add icalvete/ubuntu-12.04-64-puppet
 $ vagrant box add icalvete/ubuntu-14.04-64-puppet 
+$ vagrant box add icalvete/ubuntu-16.04-64-puppet 
 ```
 
 Chossing the right backend (virtualbox)
