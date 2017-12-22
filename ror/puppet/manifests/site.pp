@@ -7,6 +7,10 @@ node default {
 
   include ntp
 
+  package { 'imagemagick':
+    ensure  => present
+  }
+
   common::set_localtime{'set_localtime':
     zone => 'Europe/Madrid'
   }
@@ -42,7 +46,7 @@ node default {
     group  => 'root',
     mode   => '0755',
   }
-
+/*
   class {'::mongodb::globals':
     version             => '3.2.7',
     manage_package_repo => true,
@@ -57,5 +61,13 @@ node default {
   package { 'mongodb-org-tools':
     ensure  => present,
     require => Class['mongodb::server']
+  }
+*/
+
+  include roles::postgresql_server
+
+  postgresql::server::db { 'ror':
+    user     => 'ror',
+    password => 'ror',
   }
 }
