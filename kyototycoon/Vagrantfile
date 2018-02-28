@@ -11,7 +11,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   # Every Vagrant virtual environment requires a box to build off of.
   config.vm.box = "icalvete/ubuntu-16.04-64-puppet"
-  config.vm.box_version = "<= 0.0.1"
+  config.vm.box_version = "<= 0.0.3"
   config.vm.hostname = "kyototycoon"
 
   # The url from where the 'config.vm.box' box will be fetched if it
@@ -83,9 +83,12 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # # }
   #
   config.vm.provision :puppet do |puppet|
-    puppet.manifests_path = "puppet/manifests"
-    puppet.manifest_file  = "site.pp"
-    puppet.module_path = [Dir.pwd + "/../puppet/hiera", Dir.pwd + "/../puppet/modules_sp", Dir.pwd + "/../puppet/modules"] 
+    puppet.options           = "--verbose --debug"
+    puppet.environment_path  = "environments"
+    puppet.environment       = "dev"
+    puppet.manifests_path    = "manifests"
+    puppet.manifest_file     = "site.pp"
+    puppet.module_path       = [Dir.pwd + "/../puppet/hiera", Dir.pwd + "/../puppet/modules_sp", Dir.pwd + "/../puppet/modules"]
     puppet.hiera_config_path = Dir.pwd + "/../puppet/hiera.yaml"
   end
 
