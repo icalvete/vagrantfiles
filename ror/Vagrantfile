@@ -11,7 +11,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   # Every Vagrant virtual environment requires a box to build off of.
   config.vm.box = "icalvete/ror"
-  config.vm.box_version = "<= 0.0.5"
+  config.vm.box_version = "<= 0.0.7"
   config.vm.hostname = "ror"
 
   # The url from where the 'config.vm.box' box will be fetched if it
@@ -26,7 +26,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # Create a private network, which allows host-only access to the machine
   # using a specific IP.
   #config.vm.network :private_network, ip: "192.168.33.21"
-  config.vm.network :public_network, ip: "192.168.1.222"
+  config.vm.network :public_network, ip: "192.168.1.39"
 
   # Create a public network, which generally matched to bridged network.
   # Bridged networks make the machine appear as another physical device on
@@ -58,7 +58,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     #vb.gui = true
     #
     # Use VBoxManage to customize the VM. For example to change memory:
-    vb.customize ["modifyvm", :id, "--memory", "1024"]
+    vb.customize ["modifyvm", :id, "--memory", "3072"]
     vb.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
     vb.customize ["modifyvm", :id, "--natdnsproxy1", "on"]
     vb.name = "ror"
@@ -86,11 +86,13 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # # }
   #
   config.vm.provision :puppet do |puppet|
-    puppet.manifests_path = "puppet/manifests"
-    puppet.manifest_file  = "site.pp"
-    puppet.module_path = [Dir.pwd + "/../puppet/hiera", Dir.pwd + "/../puppet/modules_sp", Dir.pwd + "/../puppet/modules"]
+    puppet.options           = "--verbose --debug"
+    puppet.environment_path  = "environments"
+    puppet.environment       = "dev"
+    puppet.manifests_path    = "manifests"
+    puppet.manifest_file     = "site.pp"
+    puppet.module_path       = [Dir.pwd + "/../puppet/hiera", Dir.pwd + "/../puppet/modules_sp", Dir.pwd + "/../puppet/modules"]
     puppet.hiera_config_path = Dir.pwd + "/../puppet/hiera.yaml"
-    puppet.options = "--environment DEV"
   end
 
   # Enable provisioning with chef solo, specifying a cookbooks path, roles
