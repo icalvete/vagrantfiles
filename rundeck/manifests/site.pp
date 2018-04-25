@@ -3,7 +3,7 @@ stage{'post':}
 
 Stage[pre] -> Stage[main] -> Stage[post]
 
-$env = hiera('environment')
+$env = lookup('environment')
 
 node default {
 
@@ -14,7 +14,7 @@ node default {
     zone => 'Europe/Madrid'
   }
 
-$env = hiera('environment')
+$env = lookup('environment')
 
   common::add_env{'APPLICATION_ENV':
     key   => 'APPLICATION_ENV',

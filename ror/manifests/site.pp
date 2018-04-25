@@ -37,7 +37,7 @@ node default {
     max_object_size => '3m'
   }
 
-  $backup_dir = hiera('backup_dir')
+  $backup_dir = lookup('backup_dir')
 
   file {'backup_dir':
     ensure => directory,

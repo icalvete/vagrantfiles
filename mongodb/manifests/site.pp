@@ -3,7 +3,7 @@ stage{'post':}
 
 Stage[pre] -> Stage[main] -> Stage[post]
 
-$env = hiera('environment')
+$env = lookup('environment')
 
 node default {
 
@@ -18,7 +18,7 @@ node default {
     value => $env
   }
 
-  $backup_dir = hiera('backup_dir')
+  $backup_dir = lookup('backup_dir')
 
   file {'backup_dir':
     ensure => directory,

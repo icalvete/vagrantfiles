@@ -3,7 +3,7 @@ stage{'post':}
 
 Stage[pre] -> Stage[main] -> Stage[post]
 
-$env = hiera('environment')
+$env = lookup('environment')
 
 node default {
 
@@ -13,7 +13,7 @@ node default {
     zone => 'Europe/Madrid'
   }
 
-  $apache26_dists = hiera('apache26_dists')
+  $apache26_dists = lookup('apache26_dists')
   $apache26       = member($apache26_dists, $lsbdistcodename)
 
   common::add_env{'APPLICATION_ENV':

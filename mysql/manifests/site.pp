@@ -3,7 +3,7 @@ stage{'post':}
 
 Stage[pre] -> Stage[main] -> Stage[post]
 
-$env = hiera('environment')
+$env = lookup('environment')
 
 node default {
 
@@ -23,9 +23,9 @@ node default {
     ensure => present
   }
 
-  $root_user  = hiera('mysql_root_user')
-  $root_pass  = hiera('mysql_root_pass')
-  $backup_dir = hiera('backup_dir')
+  $root_user  = lookup('mysql_root_user')
+  $root_pass  = lookup('mysql_root_pass')
+  $backup_dir = lookup('backup_dir')
 
   file {'backup_dir':
     ensure => directory,

@@ -16,9 +16,9 @@ node default {
     zone => 'Europe/Madrid'
   }
 
-  $environment = hiera('environment')
+  $environment = lookup('environment')
 
-  $backup_dir = hiera('backup_dir')
+  $backup_dir = lookup('backup_dir')
 
   file {'backup_dir':
     ensure => directory,

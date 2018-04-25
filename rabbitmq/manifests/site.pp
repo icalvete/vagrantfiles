@@ -3,7 +3,7 @@ stage{'post':}
 
 Stage[pre] -> Stage[main] -> Stage[post]
 
-$env = hiera('environment')
+$env = lookup('environment')
 
 node default {
 
