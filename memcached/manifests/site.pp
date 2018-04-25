@@ -18,14 +18,9 @@ node default {
     value => $env
   }
 
-  include php5::php5_cli
-
-  $repo_version = '5.x'
-
-  class {'roles::elasticsearch_server':
-    repo_version     => $repo_version,
-    bind_host        => $ipaddress_enp0s8,
-    publish_host     => $ipaddress_enp0s8,
-    default_template => 'false'
+  class {'roles::memcached_server':
+    memory          => '256',
+    max_object_size => '3m'
   }
 }
+

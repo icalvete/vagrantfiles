@@ -42,15 +42,15 @@ node default {
   }
 
   parse_platform::app {'app2':
-    application_id   => '222',
-    master_key       => '222',
-    port             => 1338,
-    cloud_code       => true,
-    dashboard        => true,
-    javascript_key   => '222',
-    rest_key         => '222',
-    dashboard_user   => 'user',
-    dashboard_pass   => 'pass',
-    require          => Class['nodejs']
+    application_id => '222',
+    master_key     => '222',
+    port           => 1338,
+    cloud_code     => true,
+    dashboard      => true,
+    javascript_key => '222',
+    rest_key       => '222',
+    dashboard_user => 'user',
+    dashboard_pass => 'pass',
+    require        => Class['nodejs']
   }
 }

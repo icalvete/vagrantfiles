@@ -3,6 +3,8 @@ stage{'post':}
 
 Stage[pre] -> Stage[main] -> Stage[post]
 
+$env = hiera('environment')
+
 node default {
 
   include common
@@ -11,7 +13,14 @@ node default {
     zone => 'Europe/Madrid'
   }
 
-  $environment = hiera('environment')
+  common::add_env{'APPLICATION_ENV':
+    key   => 'APPLICATION_ENV',
+    value => $env,
+  }
+
+  class {'nodejs':
+    version => 4
+  }
 
   $backup_dir = hiera('backup_dir')
 
@@ -29,4 +38,3 @@ node default {
     rest          => false
   }
 }
-

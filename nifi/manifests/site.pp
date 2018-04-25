@@ -3,6 +3,8 @@ stage{'post':}
 
 Stage[pre] -> Stage[main] -> Stage[post]
 
+$env = hiera('environment')
+
 node default {
 
   include common
@@ -17,15 +19,13 @@ node default {
     zone => 'Europe/Madrid'
   }
 
-  $environment = hiera('environment')
-
   common::add_env{'APPLICATION_ENV':
     key   => 'APPLICATION_ENV',
-    value => $environment,
+    value => $env,
   }
 
   # host_header param is due to host header check in 1.5.0
   class {'nifi':
     host_header => '192.168.33.18',
-  } 
+  }
 }

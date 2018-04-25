@@ -3,6 +3,8 @@ stage{'post':}
 
 Stage[pre] -> Stage[main] -> Stage[post]
 
+$env = hiera('environment')
+
 node default {
 
   include common
@@ -11,9 +13,11 @@ node default {
     zone => 'Europe/Madrid'
   }
 
-  class {'roles::memcached_server':
-    memory          => '256',
-    max_object_size => '3m'
+  common::add_env{'APPLICATION_ENV':
+    key   => 'APPLICATION_ENV',
+    value => $env
   }
+
+  include roles::postgresql_server
 }
 

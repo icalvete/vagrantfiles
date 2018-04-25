@@ -3,23 +3,21 @@ stage{'post':}
 
 Stage[pre] -> Stage[main] -> Stage[post]
 
+$env = hiera('environment')
+
 node default {
 
-
-  class {'common::vagrant':
-    stage => pre
-  }
+  include common
 
   common::set_localtime{'set_localtime':
     zone => 'Europe/Madrid'
   }
 
-  $environment = hiera('environment')
-
   common::add_env{'APPLICATION_ENV':
     key   => 'APPLICATION_ENV',
-    value => $environment
+    value => $env
   }
 
-  include rundeck
+  include roles::rabbitmq_server
 }
+
