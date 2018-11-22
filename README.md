@@ -88,11 +88,13 @@ $ git submodule update
 
 * Download any manifest you need
 
+(Be aware. There is a final dot at the end of git clone !!!!)
+
 ```bash
 $ cd ..
 $ rm modules/.gitkeep
 $ cd modules
-$ git clone  https://< what ever you need >.git
+$ git clone  https://< what ever you need >.git .
 ```
 
 ## Using it:
