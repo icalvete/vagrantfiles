@@ -75,9 +75,12 @@ $ git clone https://github.com/icalvete/vagrantfiles.git
 
 * Download common manifest
 
+(Be aware. There is a final dot at the end of git clone !!!!)
+
 ```bash
 $ cd  vagrantfiles
 $ rm puppet/modules_sp/.gitkeep
+$ cd puppet/modules_sp/
 $ git clone https://github.com/smartpurposes/puppet-modules.git .
 $ git submodule init
 $ git submodule update
