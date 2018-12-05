@@ -10,6 +10,7 @@ apache26_dists:
         - 'saucy'
         - 'trusty'
         - 'xenial'
+        - 'bionic'
 
 root_log_dir: '/var/log'
 syslog_remote_server: '127.0.0.1'
