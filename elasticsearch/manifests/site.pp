@@ -20,12 +20,13 @@ node default {
 
   include php5::php5_cli
 
-  $repo_version = '5.x'
+  $repo_version = '6.x'
 
   class {'roles::elasticsearch_server':
     repo_version     => $repo_version,
+    version          => '6.6.0',
     bind_host        => $ipaddress_enp0s8,
     publish_host     => $ipaddress_enp0s8,
-    default_template => 'false'
+    default_template => false
   }
 }

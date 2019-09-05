@@ -29,9 +29,13 @@ node default {
   }
 
   class {'roles::mongodb_server':
-    auth          => false,
-    backup_dir    => $backup_dir,
-    rest          => false
+    version    => '4.2.0',
+    auth       => false,
+    backup_dir => $backup_dir,
+    rest       => false,
+    set_parameter => '
+  failIndexKeyTooLong: false
+    '
   }
 }
 
