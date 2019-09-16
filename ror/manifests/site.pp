@@ -6,6 +6,7 @@ Stage[pre] -> Stage[main] -> Stage[post]
 node default {
 
   include ntp
+  include nodejs
 
   package { 'imagemagick':
     ensure  => present
