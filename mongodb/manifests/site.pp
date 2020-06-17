@@ -29,7 +29,7 @@ node default {
   }
 
   class {'roles::mongodb_server':
-    version    => '4.2.0',
+    version    => '4.2.8',
     auth       => false,
     backup_dir => $backup_dir,
     rest       => false,

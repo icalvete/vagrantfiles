@@ -23,7 +23,6 @@ node default {
     ensure => present
   }
 
-  $root_user  = lookup('mysql_root_user')
   $root_pass  = lookup('mysql_root_pass')
   $backup_dir = lookup('backup_dir')
 
@@ -35,19 +34,17 @@ node default {
     mode   => '0755',
   }
 
-  class {'mysql::server':
-    root_pass  => 'mysql',
-    backup_dir => '/srv/backup',
-    s3_backup  => false,
-    require    => File['backup_dir']
+  $override_options = {
+    'mysqld' => {
+      'bind-address' => '0.0.0.0',
+    }
   }
 
-  mysql::user {'root':
-    root_user => $root_user,
-    root_pass => $root_pass,
-    pass      => $root_pass,
-    host      => '%',
-    require   => Class['mysql::server']
+  class { '::mysql::server':
+    root_password           => $root_pass,
+    remove_default_accounts => true,
+    restart                 => true,
+    override_options        => $override_options
   }
 }
 
